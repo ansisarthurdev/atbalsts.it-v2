@@ -1,0 +1,35 @@
+.content {
+width: 80%; 
+flex: 1;
+display: flex;
+}
+
+.content .content-left {
+width: 50%;
+background-color: #FBF7F4;
+}
+
+.content .content-left .content-left-wrapper {
+background: white;
+margin: 10px 0;
+min-height: calc(100vh - 20px);
+border-radius: 10px;
+padding: 0 10px;
+overflow-y: scroll;
+}
+
+.content .content-left .content-left-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.content .content-right {  
+background-color: #FBF7F4;
+width: 50%;
+padding: 0 20px;
+overflow-y: scroll;
+}
+
+.content .content-right::-webkit-scrollbar {
+    display: none;
+}
+
