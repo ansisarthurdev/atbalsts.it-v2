@@ -7,7 +7,12 @@
     <title>Atbalsts.it v2</title>
     <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script
+    src="https://code.jquery.com/jquery-3.6.3.slim.js"
+    integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc="
+    crossorigin="anonymous"></script>
+    <script src="/js/tooltip.js"></script>
 </head>
 <body>
     <div class='wrapper'>
@@ -16,27 +21,124 @@
                 <img src='/images/logo.png' alt='logo' />
     
                 <ul class='menu-dekstop'>
-                    <a href='/'><li><i class="fa fa-home icon" aria-hidden="true"></i>Dashboard</li></a>
-                    <a href='/'><li><i class="fa fa-home icon" aria-hidden="true"></i>Dashboard</li></a>
-                    <a href='/'><li><i class="fa fa-home icon" aria-hidden="true"></i>Dashboard</li></a>
-                    <a href='/'><li><i class="fa fa-home icon" aria-hidden="true"></i>Dashboard</li></a>
+                    <a href='/'><li><i class="fa fa-home icon" aria-hidden="true"></i>Panelis</li></a>
+                    <li class='contacts'><i class="fa fa-users icon" aria-hidden="true"></i>Kontakti</li>
+                    <div class="category-list">
+                        <a href="/">Kategorijas nosaukums</a>
+                        <a href="/">Kategorijas nosaukums</a>
+                        <a href="/">Kategorijas nosaukums</a>
+                        <a href="/">Kategorijas nosaukums</a>
+                        <a href="/">Kategorijas nosaukums</a>
+                        <a href="/">Kategorijas nosaukums</a>
+                        <a href="/">Kategorijas nosaukums</a>
+                        <a href="/">Kategorijas nosaukums</a>
+                        <a href="/">Kategorijas nosaukums</a>
+                        <a href="/">Kategorijas nosaukums</a>
+                        <a href="/">Kategorijas nosaukums</a>
+                        <a href="/">Kategorijas nosaukums</a>
+                        <a href="/">Kategorijas nosaukums</a>
+                        <a href="/">Kategorijas nosaukums</a>
+                        <a href="/">Kategorijas nosaukums</a>
+                        <a href="/">Kategorijas nosaukums</a>
+                        <a href="/">Kategorijas nosaukums</a>
+                        <a href="/">Kategorijas nosaukums</a>
+                        <a href="/">Kategorijas nosaukums</a>
+                        <a href="/">Kategorijas nosaukums</a>
+                    </div>
+                    <a href='/'><li><i class="fa fa-lock icon" aria-hidden="true"></i></i>Admin</li></a>
+                    <a href='/'><li><i class="fa fa-share icon" aria-hidden="true"></i>Atbalsts.it</li></a>
                 </ul>
             </div>
 
             <div class='left-sidebar-bottom'>
-                <a href='/'><i class="fa fa-sign-out icon" aria-hidden="true"></i> <p>Logout</p></a>
+                <a href='/'><i class="fa fa-sign-out icon" aria-hidden="true"></i> <p>Iziet</p></a>
             </div>
         </div>
 
         <div class='content'>
             <div class="content-left">
                 <div class="content-left-wrapper">
-                    kontakti
+                    <div class="content-left-top">
+                    <div class="content-left-search-bar">
+                        <input type="text" class="input-bar" placeholder="27073290" autofocus autocomplete="off"/>
+                    </div>
+
+                    <!--parāda kad ir search results-->
+                    <!--
+                    <div class="content-left-search-results">
+                        <a href="/">
+                        <p class="company">Zaļā Bāze</p>
+                            <div class="user_info">
+                                    <p class="name">testers</p>
+                                    <p class="number">22338490</p>   
+                            </div>        
+                        </a>
+                        <a href="/">
+                        <p class="company">Zaļā Bāze</p>
+                            <div class="user_info">
+                                    <p class="name">testers</p>
+                                    <p class="number">22338490</p>   
+                            </div>        
+                        </a>
+                    </div>-->
+
+                    <div class="content-left-header">
+                        <div class="category-info">
+                            <h3 class="heading">Nosaukums</h3>
+                            <p class="name">MM8</p>
+
+                            <h3 class="heading">Piezīmes</h3>
+                            <p class="notes">https://app.asana.com/0/27121026955137/list</p>
+                        </div>
+
+                        <div class="content-left-btns">
+                            <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienot kontaktu"><i class="fa fa-plus icon" aria-hidden="true"></i></div>
+                            <div class="button" data-toggle="tooltip" data-placement="top" title="Labot kategoriju"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                            <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst kategoriju"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--tabulas ikonas, tabulai height 60vh-->
+                <!--<div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt kontaktu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst kontaktu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>-->
                 </div>
             </div>
 
             <div class="content-right">
-                cases
+                <div class="content-right-top">
+                    <!--h3 head tagu rāda tikai sākumlapā-->
+                    <!--<h3 class="heading">Pēdējie ieraksti</h3>-->
+
+                    <!--ja izvēlēta kategorija/kontakts rāda šo-->
+                    <div class="content-right-header">
+                        <div class="case-info">
+                            <h3 class="heading">Nosaukums</h3>
+                            <p class="name">MM8</p>
+                        </div>
+
+                        <div class="content-right-info">
+                            <div class="item">
+                                <h3 class="heading">KEISI</h3>
+                                <p class="count">x</p>
+                            </div>
+
+                            <!--ja izvēlēta kategorija rāda arī šo-->
+                            <span class="divider"></span>
+
+                            <div class="item">
+                                <h3 class="heading">KONTAKTI    </h3>
+                                <p class="count">x</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-table">
+                    <!--Te iet case tabula-->
+                </div>
             </div>
         </div>
 
@@ -46,19 +148,26 @@
             <div class="right-sidebar-top">
                 <div class="right-sidebar-user">
                     <div class="user-avatar">
-                        <img src="https://images.unsplash.com/photo-1519674508766-db48af81ed1c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80" alt="user-photo" />
+                        <!--Te var ielikt pirmo burtu no vārda-->
+                        <div class="first-letter">A</div>
                         <span class='online-dot'></span>
                     </div>
 
-                    <h3>Nickname</h3>
+                    <h3>Vārds</h3>
                     <p>Statuss</p>
                 </div>
             </div>  
 
             <div class="right-sidebar-bottom">
-                <div class="button"><i class="fa fa-plus icon" aria-hidden="true"></i></div>
+                <!--šo pogu var izmantot gan kā pievienot kategoriju, ja nav izvēlēts kontakts. bet, ja ir izvēlēts kontakts, tad kā case pievienošanu-->
+                <!--piemērs kategorijas pievienošanai-->
+                <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienot kategoriju"><i class="fa fa-plus icon" aria-hidden="true"></i></div>
             </div>
         </div>
     </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>
