@@ -12,7 +12,8 @@
     src="https://code.jquery.com/jquery-3.6.3.slim.js"
     integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc="
     crossorigin="anonymous"></script>
-    <script src="/js/tooltip.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 <body>
     <div class='wrapper'>
@@ -24,9 +25,9 @@
                     <a href='/'><li><i class="fa fa-home icon" aria-hidden="true"></i>Panelis</li></a>
                     <li class='contacts'><i class="fa fa-users icon" aria-hidden="true"></i>Kontakti</li>
                     <div class="category-list">
-                        <a href="/">Kategorijas nosaukums</a>
-                        <a href="/">Kategorijas nosaukums</a>
-                        <a href="/">Kategorijas nosaukums</a>
+                        <a href="/">MM8</a>
+                        <a href="/">Newcom Construction</a>
+                        <a href="/">Biznesa audita centrs</a>
                         <a href="/">Kategorijas nosaukums</a>
                         <a href="/">Kategorijas nosaukums</a>
                         <a href="/">Kategorijas nosaukums</a>
@@ -92,18 +93,252 @@
                         </div>
 
                         <div class="content-left-btns">
-                            <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienot kontaktu"><i class="fa fa-plus icon" aria-hidden="true"></i></div>
-                            <div class="button" data-toggle="tooltip" data-placement="top" title="Labot kategoriju"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
-                            <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst kategoriju"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                            <div class="button" data-toggle="modal" data-target="#add-contact"><div class="button" data-toggle="tooltip" data-placement="top" title="Pievienot kontaktu"><i class="fa fa-plus icon" aria-hidden="true"></i></div></div>
+                            <div class="button" data-toggle="modal" data-target="#edit-category"><div class="button" data-toggle="tooltip" data-placement="top" title="Labot kategoriju"><i class="fa fa-pencil icon" aria-hidden="true"></i></div></div>
+                            <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo kategoriju un visus kontaktus, kas ir zem šīs kategorijas?')" href="?parent_id=1&amp;delete_category_id=1">
+                                <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst kategoriju"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                            </a> 
+                            <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                            <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
                         </div>
                     </div>
                 </div>
 
-                <!--tabulas ikonas, tabulai height 60vh-->
-                <!--<div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt kontaktu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
-                <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst kontaktu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
-                <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
-                <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>-->
+                <div class="contact-table">
+                <div class="table-responsive">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Vārds/nosaukums</th>
+                          <th>Numurs</th>
+                          <th>Komentārs</th>
+                          <th>Statuss</th>
+                          <th>Iespējas</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Juris Kuļešovs</td>
+                          <td>25397828</td>
+                          <td>It Support</td>
+                          <td>1530210010</td>
+                          <td>
+                            <div class="button" data-toggle="modal" data-target="#edit-contact">
+                                <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt kontaktu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                            </div>
+
+                            <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo kontaktu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst kontaktu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                            </a> 
+
+                            <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                            <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                          </td>
+                        </tr>
+                        <tr>
+                            <td>Juris Kuļešovs</td>
+                            <td>25397828</td>
+                            <td>It Support</td>
+                            <td>1530210010</td>
+                            <td>
+                              <div class="button" data-toggle="modal" data-target="#edit-contact">
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt kontaktu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                              </div>
+  
+                              <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo kontaktu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst kontaktu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                              </a> 
+  
+                              <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                              <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Juris Kuļešovs</td>
+                            <td>25397828</td>
+                            <td>It Support</td>
+                            <td>1530210010</td>
+                            <td>
+                              <div class="button" data-toggle="modal" data-target="#edit-contact">
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt kontaktu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                              </div>
+  
+                              <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo kontaktu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst kontaktu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                              </a> 
+  
+                              <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                              <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Juris Kuļešovs</td>
+                            <td>25397828</td>
+                            <td>It Support</td>
+                            <td>1530210010</td>
+                            <td>
+                              <div class="button" data-toggle="modal" data-target="#edit-contact">
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt kontaktu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                              </div>
+  
+                              <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo kontaktu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst kontaktu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                              </a> 
+  
+                              <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                              <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Juris Kuļešovs</td>
+                            <td>25397828</td>
+                            <td>It Support</td>
+                            <td>1530210010</td>
+                            <td>
+                              <div class="button" data-toggle="modal" data-target="#edit-contact">
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt kontaktu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                              </div>
+  
+                              <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo kontaktu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst kontaktu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                              </a> 
+  
+                              <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                              <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Juris Kuļešovs</td>
+                            <td>25397828</td>
+                            <td>It Support</td>
+                            <td>1530210010</td>
+                            <td>
+                              <div class="button" data-toggle="modal" data-target="#edit-contact">
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt kontaktu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                              </div>
+  
+                              <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo kontaktu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst kontaktu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                              </a> 
+  
+                              <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                              <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Juris Kuļešovs</td>
+                            <td>25397828</td>
+                            <td>It Support</td>
+                            <td>1530210010</td>
+                            <td>
+                              <div class="button" data-toggle="modal" data-target="#edit-contact">
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt kontaktu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                              </div>
+  
+                              <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo kontaktu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst kontaktu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                              </a> 
+  
+                              <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                              <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Juris Kuļešovs</td>
+                            <td>25397828</td>
+                            <td>It Support</td>
+                            <td>1530210010</td>
+                            <td>
+                              <div class="button" data-toggle="modal" data-target="#edit-contact">
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt kontaktu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                              </div>
+  
+                              <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo kontaktu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst kontaktu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                              </a> 
+  
+                              <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                              <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Juris Kuļešovs</td>
+                            <td>25397828</td>
+                            <td>It Support</td>
+                            <td>1530210010</td>
+                            <td>
+                              <div class="button" data-toggle="modal" data-target="#edit-contact">
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt kontaktu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                              </div>
+  
+                              <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo kontaktu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst kontaktu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                              </a> 
+  
+                              <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                              <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Juris Kuļešovs</td>
+                            <td>25397828</td>
+                            <td>It Support</td>
+                            <td>1530210010</td>
+                            <td>
+                              <div class="button" data-toggle="modal" data-target="#edit-contact">
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt kontaktu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                              </div>
+  
+                              <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo kontaktu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst kontaktu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                              </a> 
+  
+                              <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                              <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Juris Kuļešovs</td>
+                            <td>25397828</td>
+                            <td>It Support</td>
+                            <td>1530210010</td>
+                            <td>
+                              <div class="button" data-toggle="modal" data-target="#edit-contact">
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt kontaktu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                              </div>
+  
+                              <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo kontaktu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst kontaktu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                              </a> 
+  
+                              <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                              <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Juris Kuļešovs</td>
+                            <td>25397828</td>
+                            <td>It Support</td>
+                            <td>1530210010</td>
+                            <td>
+                              <div class="button" data-toggle="modal" data-target="#edit-contact">
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt kontaktu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                              </div>
+  
+                              <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo kontaktu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst kontaktu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                              </a> 
+  
+                              <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                              <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                            </td>
+                          </tr>
+ 
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
                 </div>
             </div>
 
@@ -125,11 +360,10 @@
                                 <p class="count">x</p>
                             </div>
 
-                            <!--ja izvēlēta kategorija rāda arī šo-->
                             <span class="divider"></span>
 
                             <div class="item">
-                                <h3 class="heading">KONTAKTI    </h3>
+                                <h3 class="heading">KONTAKTI</h3>
                                 <p class="count">x</p>
                             </div>
                         </div>
@@ -138,6 +372,320 @@
 
                 <div class="case-table">
                     <!--Te iet case tabula-->
+                    <div class="table-responsive">
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Kategorija</th>
+                              <th>Kontakts</th>
+                              <th>Zvanu laiks</th>
+                              <th>Darba laiks</th>
+                              <th>TW vai AD</th>
+                              <th>Piezīme</th>
+                              <th>Rēķins</th>
+                              <th>Statuss</th>
+                              <th>Iespējas</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Kvests</td>
+                              <td>Jeļena Hāne</td>
+                              <td>00:11:18</td>
+                              <td>00:07:00</td>
+                              <td>1530210010</td>
+                              <td>Nestrādā Jumis. Parinstalēju un aizgāja.</td>
+                              <td><i class="fa fa-times icon" aria-hidden="true"></i></td>
+                              <td><i class="fa fa-check icon" aria-hidden="true"></i></td>
+                              <td>
+                                <div class="button" data-toggle="modal" data-target="#edit-case">
+                                    <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt keisu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                                </div>
+    
+                                <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo keisu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                    <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst keisu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                                </a> 
+                                <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                                <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                              </td>
+                            </tr>
+                            <tr>
+                                <td>Kvests</td>
+                                <td>Jeļena Hāne</td>
+                                <td>00:11:18</td>
+                                <td>00:07:00</td>
+                                <td>1530210010</td>
+                                <td>Nestrādā Jumis. Parinstalēju un aizgāja.</td>
+                                <td><i class="fa fa-times icon" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check icon" aria-hidden="true"></i></td>
+                                <td>
+                                  <div class="button" data-toggle="modal" data-target="#edit-case">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt keisu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                                  </div>
+      
+                                  <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo keisu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst keisu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                                  </a> 
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Kvests</td>
+                                <td>Jeļena Hāne</td>
+                                <td>00:11:18</td>
+                                <td>00:07:00</td>
+                                <td>1530210010</td>
+                                <td>Nestrādā Jumis. Parinstalēju un aizgāja.</td>
+                                <td><i class="fa fa-times icon" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check icon" aria-hidden="true"></i></td>
+                                <td>
+                                  <div class="button" data-toggle="modal" data-target="#edit-case">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt keisu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                                  </div>
+      
+                                  <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo keisu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst keisu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                                  </a> 
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Kvests</td>
+                                <td>Jeļena Hāne</td>
+                                <td>00:11:18</td>
+                                <td>00:07:00</td>
+                                <td>1530210010</td>
+                                <td>Nestrādā Jumis. Parinstalēju un aizgāja.</td>
+                                <td><i class="fa fa-times icon" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check icon" aria-hidden="true"></i></td>
+                                <td>
+                                  <div class="button" data-toggle="modal" data-target="#edit-case">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt keisu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                                  </div>
+      
+                                  <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo keisu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst keisu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                                  </a> 
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Kvests</td>
+                                <td>Jeļena Hāne</td>
+                                <td>00:11:18</td>
+                                <td>00:07:00</td>
+                                <td>1530210010</td>
+                                <td>Nestrādā Jumis. Parinstalēju un aizgāja.</td>
+                                <td><i class="fa fa-times icon" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check icon" aria-hidden="true"></i></td>
+                                <td>
+                                  <div class="button" data-toggle="modal" data-target="#edit-case">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt keisu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                                  </div>
+      
+                                  <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo keisu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst keisu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                                  </a> 
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Kvests</td>
+                                <td>Jeļena Hāne</td>
+                                <td>00:11:18</td>
+                                <td>00:07:00</td>
+                                <td>1530210010</td>
+                                <td>Nestrādā Jumis. Parinstalēju un aizgāja.</td>
+                                <td><i class="fa fa-times icon" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check icon" aria-hidden="true"></i></td>
+                                <td>
+                                  <div class="button" data-toggle="modal" data-target="#edit-case">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt keisu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                                  </div>
+      
+                                  <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo keisu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst keisu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                                  </a> 
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Kvests</td>
+                                <td>Jeļena Hāne</td>
+                                <td>00:11:18</td>
+                                <td>00:07:00</td>
+                                <td>1530210010</td>
+                                <td>Nestrādā Jumis. Parinstalēju un aizgāja.</td>
+                                <td><i class="fa fa-times icon" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check icon" aria-hidden="true"></i></td>
+                                <td>
+                                  <div class="button" data-toggle="modal" data-target="#edit-case">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt keisu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                                  </div>
+      
+                                  <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo keisu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst keisu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                                  </a> 
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Kvests</td>
+                                <td>Jeļena Hāne</td>
+                                <td>00:11:18</td>
+                                <td>00:07:00</td>
+                                <td>1530210010</td>
+                                <td>Nestrādā Jumis. Parinstalēju un aizgāja.</td>
+                                <td><i class="fa fa-times icon" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check icon" aria-hidden="true"></i></td>
+                                <td>
+                                  <div class="button" data-toggle="modal" data-target="#edit-case">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt keisu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                                  </div>
+      
+                                  <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo keisu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst keisu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                                  </a> 
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Kvests</td>
+                                <td>Jeļena Hāne</td>
+                                <td>00:11:18</td>
+                                <td>00:07:00</td>
+                                <td>1530210010</td>
+                                <td>Nestrādā Jumis. Parinstalēju un aizgāja.</td>
+                                <td><i class="fa fa-times icon" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check icon" aria-hidden="true"></i></td>
+                                <td>
+                                  <div class="button" data-toggle="modal" data-target="#edit-case">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt keisu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                                  </div>
+      
+                                  <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo keisu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst keisu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                                  </a> 
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Kvests</td>
+                                <td>Jeļena Hāne</td>
+                                <td>00:11:18</td>
+                                <td>00:07:00</td>
+                                <td>1530210010</td>
+                                <td>Nestrādā Jumis. Parinstalēju un aizgāja.</td>
+                                <td><i class="fa fa-times icon" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check icon" aria-hidden="true"></i></td>
+                                <td>
+                                  <div class="button" data-toggle="modal" data-target="#edit-case">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt keisu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                                  </div>
+      
+                                  <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo keisu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst keisu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                                  </a> 
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Kvests</td>
+                                <td>Jeļena Hāne</td>
+                                <td>00:11:18</td>
+                                <td>00:07:00</td>
+                                <td>1530210010</td>
+                                <td>Nestrādā Jumis. Parinstalēju un aizgāja.</td>
+                                <td><i class="fa fa-times icon" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check icon" aria-hidden="true"></i></td>
+                                <td>
+                                  <div class="button" data-toggle="modal" data-target="#edit-case">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt keisu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                                  </div>
+      
+                                  <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo keisu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst keisu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                                  </a> 
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Kvests</td>
+                                <td>Jeļena Hāne</td>
+                                <td>00:11:18</td>
+                                <td>00:07:00</td>
+                                <td>1530210010</td>
+                                <td>Nestrādā Jumis. Parinstalēju un aizgāja.</td>
+                                <td><i class="fa fa-times icon" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check icon" aria-hidden="true"></i></td>
+                                <td>
+                                  <div class="button" data-toggle="modal" data-target="#edit-case">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt keisu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                                  </div>
+      
+                                  <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo keisu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst keisu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                                  </a> 
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Kvests</td>
+                                <td>Jeļena Hāne</td>
+                                <td>00:11:18</td>
+                                <td>00:07:00</td>
+                                <td>1530210010</td>
+                                <td>Nestrādā Jumis. Parinstalēju un aizgāja.</td>
+                                <td><i class="fa fa-times icon" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check icon" aria-hidden="true"></i></td>
+                                <td>
+                                  <div class="button" data-toggle="modal" data-target="#edit-case">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt keisu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                                  </div>
+      
+                                  <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo keisu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst keisu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                                  </a> 
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Kvests</td>
+                                <td>Jeļena Hāne</td>
+                                <td>00:11:18</td>
+                                <td>00:07:00</td>
+                                <td>1530210010</td>
+                                <td>Nestrādā Jumis. Parinstalēju un aizgāja.</td>
+                                <td><i class="fa fa-times icon" aria-hidden="true"></i></td>
+                                <td><i class="fa fa-check icon" aria-hidden="true"></i></td>
+                                <td>
+                                  <div class="button" data-toggle="modal" data-target="#edit-case">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Rediģēt keisu"><i class="fa fa-pencil icon" aria-hidden="true"></i></div>
+                                  </div>
+      
+                                  <a class="button" onclick="return confirm('Vai tiešām vēlies dzēst šo keisu?')" href="?parent_id=1&amp;delete_category_id=1">
+                                      <div class="button" data-toggle="tooltip" data-placement="top" title="Dzēst keisu"><i class="fa fa-trash icon" aria-hidden="true"></i></div>
+                                  </a> 
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Atjaunots: datums..."><i class="fa fa-refresh icon" aria-hidden="true"></i></div>
+                                  <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienots: datums..."><i class="fa fa-address-book icon" aria-hidden="true"></i></div>
+                                </td>
+                              </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
                 </div>
             </div>
         </div>
@@ -160,12 +708,204 @@
 
             <div class="right-sidebar-bottom">
                 <!--šo pogu var izmantot gan kā pievienot kategoriju, ja nav izvēlēts kontakts. bet, ja ir izvēlēts kontakts, tad kā case pievienošanu-->
-                <!--piemērs kategorijas pievienošanai-->
-                <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienot kategoriju"><i class="fa fa-plus icon" aria-hidden="true"></i></div>
+                <!--kategorijas pievienošanai-->
+                <!--
+                <div data-toggle="modal" data-target="#add-category">
+                    <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienot kategoriju"><i class="fa fa-plus icon" aria-hidden="true"></i></div>
+                </div>
+                -->
+
+                <!--case pievienošanai-->
+                <div data-toggle="modal" data-target="#add-case">
+                    <div class="button" data-toggle="tooltip" data-placement="top" title="Pievienot keisu"><i class="fa fa-plus icon" aria-hidden="true"></i></div>
+                </div>
             </div>
         </div>
     </div>
 
+    <div class="modal" id="add-contact">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <i class="fa fa-times close" aria-hidden="true" data-dismiss="modal"></i>
+                <h4>Pievienot jaunu kontaktu</h4>
+                <form method="post" action="?parent_id=1&amp;add_contact">
+                <div class="modal-input">
+                  <p>Vārds/nosaukums</p>
+                  <input type="text" name="add_contact_name">
+                </div>
+        
+                <div class="modal-input">
+                  <p>Numurs</p>
+                  <input type="number" name="add_contact_number" min="0">
+                </div>
+        
+                <div class="modal-input">
+                  <p>Komentārs</p>
+                  <textarea type="textarea" class="large-input" name="add_contact_comment"></textarea>
+                </div>
+        
+                <input class="modal-button success" name="add-contact" type="submit" value="Pievienot">
+                </form>
+            </div>
+        </div>
+      </div>
+
+      <div class="modal" id="edit-contact">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <i class="fa fa-times close" aria-hidden="true" data-dismiss="modal"></i>
+                <h4>Rediģēt kontaktu</h4>
+                <form method="post" action="?parent_id=1&amp;add_contact">
+                <div class="modal-input">
+                  <p>Vārds/nosaukums</p>
+                  <input type="text" name="add_contact_name">
+                </div>
+        
+                <div class="modal-input">
+                  <p>Numurs</p>
+                  <input type="number" name="add_contact_number" min="0">
+                </div>
+        
+                <div class="modal-input">
+                  <p>Komentārs</p>
+                  <textarea type="textarea" class="large-input" name="add_contact_comment"></textarea>
+                </div>
+        
+                <input class="modal-button success" name="add-contact" type="submit" value="Rediģēt">
+                </form>
+            </div>
+        </div>
+      </div>
+
+      <div class="modal" id="edit-category">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <i class="fa fa-times close" aria-hidden="true" data-dismiss="modal"></i>
+                <h4>Labot kategoriju</h4>
+                <form method="post" action="?parent_id=1&amp;add_contact">
+                <div class="modal-input">
+                  <p>Vārds/nosaukums</p>
+                  <input type="text" name="add_contact_name">
+                </div>
+
+                <div class="modal-input">
+                  <p>Komentārs</p>
+                  <textarea type="textarea" class="large-input" name="add_contact_comment"></textarea>
+                </div>
+        
+                <input class="modal-button success" name="edit-category" type="submit" value="Labot">
+                </form>
+            </div>
+        </div>
+      </div>
+
+      <div class="modal" id="add-category">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <i class="fa fa-times close" aria-hidden="true" data-dismiss="modal"></i>
+                <h4>Pievienot kategoriju</h4>
+                <form method="post" action="?parent_id=1&amp;add_contact">
+                <div class="modal-input">
+                  <p>Vārds/nosaukums</p>
+                  <input type="text" name="add_contact_name">
+                </div>
+        
+                <div class="modal-input">
+                  <p>Piezīmes</p>
+                  <textarea type="textarea" class="large-input" name="add_contact_comment"></textarea>
+                </div>
+        
+                <input class="modal-button success" name="add-category" type="submit" value="Pievienot">
+                </form>
+            </div>
+        </div>
+      </div>
+
+      <div class="modal" id="add-case">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <i class="fa fa-times close" aria-hidden="true" data-dismiss="modal"></i>
+                <h4>Pievienot keisu</h4>
+                <form method="post">
+                    <div class="modal-input">
+                        <div class="modal-input-case-head">
+                            <p>Zvana laiks</p>
+                            <p>Darba laiks</p>
+                        </div>
+                      <input style="width:49%;" type="text" name="edit_case_call_time" placeholder="00:03:15">
+                      <input style="width:49%;" type="text" name="edit_case_work_time" placeholder="00:05:00">
+                    </div>
+            
+                    <div class="modal-input">
+                      <p>Teamviewer vai AnyDesk</p>
+                      <input type="text" name="edit_case_tw_ad" placeholder="12312312">
+                    </div>
+            
+                    <div class="modal-input">
+                      <p>Piezīme</p>
+                      <textarea type="textarea" class="large-input" name="edit_case_comment"></textarea>
+                    </div>
+            
+                    <div class="modal-input">
+                        <div class="checkbox">
+                            <p>Rēķins</p>
+                            <input style="width:15px;" type="checkbox" name="edit_case_invoice[]" value="1" />
+                        </div>
+
+                        <div class="checkbox">
+                            <p>Pabeigts</p>
+                            <input style="width:15px;" type="checkbox" name="edit_case_invoice[]" value="1" />
+                        </div>
+                    </div>
+            
+                    <input class="modal-button success" name="add_contact" type="submit" value="Saglabāt">
+                    </form>
+            </div>
+        </div>
+      </div>
+
+      <div class="modal" id="edit-case">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <i class="fa fa-times close" aria-hidden="true" data-dismiss="modal"></i>
+                <h4>Rediģēt keisu</h4>
+                <form method="post">
+                    <div class="modal-input">
+                        <div class="modal-input-case-head">
+                            <p>Zvana laiks</p>
+                            <p>Darba laiks</p>
+                        </div>
+                      <input style="width:49%;" type="text" name="edit_case_call_time" placeholder="00:03:15">
+                      <input style="width:49%;" type="text" name="edit_case_work_time" placeholder="00:05:00">
+                    </div>
+            
+                    <div class="modal-input">
+                      <p>Teamviewer vai AnyDesk</p>
+                      <input type="text" name="edit_case_tw_ad" placeholder="12312312">
+                    </div>
+            
+                    <div class="modal-input">
+                      <p>Piezīme</p>
+                      <textarea type="textarea" class="large-input" name="edit_case_comment"></textarea>
+                    </div>
+            
+                    <div class="modal-input">
+                        <div class="checkbox">
+                            <p>Rēķins</p>
+                            <input style="width:15px;" type="checkbox" name="edit_case_invoice[]" value="1" />
+                        </div>
+
+                        <div class="checkbox">
+                            <p>Pabeigts</p>
+                            <input style="width:15px;" type="checkbox" name="edit_case_invoice[]" value="1" />
+                        </div>
+                    </div>
+            
+                    <input class="modal-button success" name="add_contact" type="submit" value="Rediģēt">
+                    </form>
+            </div>
+        </div>
+      </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

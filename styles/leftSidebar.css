@@ -34,7 +34,7 @@
 }
 
 .left-sidebar .menu-dekstop a li {
-    padding: 10px 20px;
+    padding: 10px 10px;
     margin-bottom: 10px;
     transition: .4s ease-in-out;
 }
@@ -51,8 +51,9 @@
 
 .left-sidebar .menu-dekstop .category-list a{
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     transition: .4s ease-in-out;
+    padding: 12px 10px;
 }
 
 .left-sidebar .menu-dekstop .category-list a:hover{
@@ -66,9 +67,10 @@
     font-size: .9rem;
     display: inline-block;
     width: 100%;
-    padding: 10px 20px;
+    padding: 10px;
     margin-bottom: 10px;
     transition: .4s ease-in-out;
+
 }
 
 .left-sidebar .menu-dekstop .contacts .icon {
